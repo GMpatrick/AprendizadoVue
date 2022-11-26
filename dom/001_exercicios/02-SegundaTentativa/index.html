@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="Desafio">
+    <p>Usando vueJs - nome: {{ nome }} idade: {{ idade }}</p>
+
+    <p>Minha idade multiplicada por 3 = {{idadeMultTres}}</p>
+
+    <p>Numero randomico gerado: {{numeroRandomico()}}</p>
+
+    <div>
+        <img v-bind:src="link" alt="" height="400">
+    </div>
+
+    <div>
+        <input v-model="nome" type="text">
+    </div>
+</div>
+
+
+<script src="app.js"></script>
