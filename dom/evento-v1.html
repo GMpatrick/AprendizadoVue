@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button v-on:click="somarUm">Somar 1</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods: {
+            somarUm(){
+                return this.contador += 1
+            }
+        }
+    })
+</script>
+
+
+<!-- 
+    v-on: quando um eveento acontecer
+    onclick, on-move etc...
+ -->
