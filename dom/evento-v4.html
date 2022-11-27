@@ -1,0 +1,86 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<style>
+    *{
+        background-color: rgb(112, 112, 112);
+    }
+    #app{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #app p {
+        font-size: 25px;
+    }
+    #app button{ 
+        
+        color: #fff; 
+        background: #00ccbc; 
+        border: 3px solid #00ccbc; 
+        min-height: 48px; 
+        padding: 12px 34px; 
+        border-radius: 4px; 
+        font-weight: 600; 
+        font-family: plex-sans,sans-serif; 
+        font-size: 16px; 
+        line-height: 24px; 
+        margin: 10px; 
+        box-sizing: border-box; 
+        cursor: pointer; 
+        } 
+        
+        #app button:hover{ 
+        background-color: #05b3a5; 
+        border: 3px solid #05e4d2; 
+        box-sizing:border-box; 
+    }
+    
+ 
+</style>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button  v-on:click="somarUm(5, $event)">Somar 5</button>
+    <button v-on:click="diminuirUm(5, $event)">Diminuir 5</button>
+    <p v-on:mousemove="atualizarXY">Mouse: {{ x }} {{ y }}
+        <span v-on:mousemove="parar">PARAR AQUI!!!</span>
+        <span v-on:mousemove.stop>PARAR AQUI!!! usando modificadores de evento</span>
+    </p>
+    <a v-on:click.prevent href="https://google.com">Google</a>
+    
+</div>
+
+<!-- CONTEXTO NÃO QUERO QUE O MAUSE MOVE FUNCIONE NA TAG SPAN -->
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            somarUm(passo, e){
+                console.log(e)
+                return this.contador += passo
+            },
+            diminuirUm(passo, e){
+                return this.contador -= passo
+            },
+            atualizarXY(e){
+                this.x = e.clientX
+                this.y = e.clientY
+            },
+            parar(event){
+                event.stopPropagation()
+            }   
+        }
+    })
+</script>
+
+
+<!-- 
+    stop: para não propagar
+    prevent: Prevenir o comportamento padrão
+ -->

@@ -37,17 +37,20 @@
  
 </style>
 
-<div id="app">
+<div v-on:mousemove="atualizarXY" id="app">
     <p>{{ contador }}</p>
-    <button v-on:click="somarUm">Somar 1</button>
+    <button  v-on:click="somarUm">Somar 1</button>
     <button v-on:click="diminuirUm">Diminuir 1</button>
+    <p>Mouse: {{ x }} {{ y }}</p>
 </div>
 
 <script>
     new Vue({
         el: '#app',
         data: {
-            contador: 0
+            contador: 0,
+            x: 0,
+            y: 0
         },
         methods: {
             somarUm(event){
@@ -55,6 +58,10 @@
             },
             diminuirUm(event){
                 return this.contador -= 1
+            },
+            atualizarXY(e){
+                this.x = e.clientX
+                this.y = e.clientY
             }
         }
     })
@@ -62,6 +69,4 @@
 
 
 <!-- 
-    v-on: quando um eveento acontecer
-    onclick, on-move etc...
  -->
