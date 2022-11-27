@@ -1,0 +1,73 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<style>
+    *{
+        background-color: rgb(112, 112, 112);
+    }
+    #app{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #app p {
+        font-size: 100px;
+    }
+    #app button{ 
+        
+        color: #fff; 
+        background: #00ccbc; 
+        border: 3px solid #00ccbc; 
+        min-height: 48px; 
+        padding: 12px 34px; 
+        border-radius: 4px; 
+        font-weight: 600; 
+        font-family: plex-sans,sans-serif; 
+        font-size: 16px; 
+        line-height: 24px; 
+        margin: 10px; 
+        box-sizing: border-box; 
+        cursor: pointer; 
+        } 
+        
+        #app button:hover{ 
+        background-color: #05b3a5; 
+        border: 3px solid #05e4d2; 
+        box-sizing:border-box; 
+    } 
+
+    #app input{
+        margin-top: 20px;
+        font-size: 20px;
+    }
+ 
+</style>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button @click="somarUm">Somar 1</button>
+    <button @click="diminuirUm">Diminuir 1</button>
+    <input type="text" :value="contador">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0
+        },
+        methods: {
+            somarUm(event){
+                return this.contador += 1
+            },
+            diminuirUm(event){
+                return this.contador -= 1
+            }
+        }
+    })
+</script>
+
+
+<!-- 
+   aonde eu tenho "v-on" posso subs por "@" 
+   aonde eu tenho "v-bind" posso subs por ":" 
+ -->
