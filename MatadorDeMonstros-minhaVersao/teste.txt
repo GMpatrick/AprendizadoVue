@@ -1,0 +1,102 @@
+if(this.vidaMonstro > 0){
+                this.vidaJogador = this.vidaJogador - ataqueMonstro[this.geradorAleatorio(4)]
+            }else{
+                this.vidaMonstro = 0
+                this.jogoEncerrado = true
+                this.jogadorGanhou = true
+                this.comecarJogo = false
+            }
+            if(this.vidaMonstro < 0){
+                this.vidaMonstro = 0
+                this.jogoEncerrado = true
+                this.jogadorGanhou = true
+                this.comecarJogo = false
+            }
+
+            if(this.vidaJogador > 0){
+                this.vidaMonstro = this.vidaMonstro - ataqueJogador[this.geradorAleatorio(4)]
+            }else{
+                this.vidaJogador = 0
+                this.jogoEncerrado = true
+                this.monstroGanhou = true
+                this.comecarJogo = false
+            }
+            if(this.vidaJogador < 0){
+                this.vidaMonstro = 0
+                this.jogoEncerrado = true
+                this.monstroGanhou = true
+                this.comecarJogo = false
+            }
+
+            if(this.vidaJogador <= 0 && this.vidaMonstro <= 0){
+                this.vidaJogador = 0
+                this.jogoEncerrado = true
+                this.monstroGanhou = true
+                this.comecarJogo = false
+            }
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if(this.vidaMonstro > 0){
+                this.vidaJogador = this.vidaJogador + ataqueJogador[this.geradorAleatorio(3)]
+            }else{
+                this.vidaMonstro = 0
+                this.jogoEncerrado = true
+                this.jogadorGanhou = true
+                this.comecarJogo = false
+            }
+            if(this.vidaMonstro < 0){
+                this.vidaMonstro = 0
+                this.jogoEncerrado = true
+                this.jogadorGanhou = true
+                this.comecarJogo = false
+            }
+
+            if(this.vidaJogador > 0){
+                this.vidaJogador = this.vidaJogador - ataqueMonstro[this.geradorAleatorio(4)]
+            }else{
+                this.vidaJogador = 0
+                this.jogoEncerrado = true
+                this.monstroGanhou = true
+                this.comecarJogo = false
+            }
+            if(this.vidaJogador < 0){
+                this.vidaMonstro = 0
+                this.jogoEncerrado = true
+                this.monstroGanhou = true
+                this.comecarJogo = false
+            }

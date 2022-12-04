@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <template  v-if="logado">   
+        <p>Usuario logado: {{nome}}</p>
+        <p>Perfil: admin</p>
+    </template>
+    <p v-else-if="anonimo">Navegando como anonimo</p>
+    <p v-else>Nenhum usuario Logado</p>
+    <button @click="logado = !logado">
+        {{logado ? 'Sair' : 'Entrar'}}</button>
+    <input type="checkbox" v-model="anonimo">
+</div>
+
+<!-- Usando o template ele envovle na div -->
+<!-- Quando trabalha com v-if ele remove o elemento da pagina -->
+
+
+<script>
+    new Vue({
+        el: "#app",
+        data:{
+            nome: 'Maria',
+            logado: false,
+            anonimo: true
+        },
+        methods: {
+            
+        }
+    })
+</script>
