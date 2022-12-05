@@ -1,0 +1,11 @@
+instalar o vue por linha de comando:
+
+npm i -g @vue/cli
+
+vue create projeto-simples
+
+vue add electron-builder
+
+
+
+
